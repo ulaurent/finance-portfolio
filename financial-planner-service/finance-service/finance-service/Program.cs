@@ -1,7 +1,14 @@
+
+
+using finance_service.Repositories;
+using finance_service.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+// Add services
+builder.Services.AddScoped<IStocksService, StocksService>();
+builder.Services.AddScoped<IStockRepository, StocksRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
