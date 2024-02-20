@@ -12,6 +12,12 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { WatchlistEditComponent } from './watchlist/watchlist-edit/watchlist-edit.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'watchlist', component: WatchlistComponent},
+  {path: 'recipes', component: RecipesComponent}
+]
 
 @NgModule({
   declarations: [
@@ -28,7 +34,8 @@ import { WatchlistEditComponent } from './watchlist/watchlist-edit/watchlist-edi
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
-    MatTableModule
+    MatTableModule, 
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
